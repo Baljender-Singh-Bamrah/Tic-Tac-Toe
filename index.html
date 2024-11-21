@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+
+        <div class="para">Turn For</div>
+
+        <div class="turn">
+            <table>
+                <tr>
+                    <td class="turn-child1 x">X</td>
+                    <td class="turn-child2">O</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="container">
+            <div class="cell" row='0' col='0'></div>
+            <div class="cell" row="0" col="1"></div>
+            <div class="cell" row="0" col="2"></div>
+            <div class="cell" row="1" col="0"></div>
+            <div class="cell" row="1" col="1"></div>
+            <div class="cell" row="1" col="2"></div>
+            <div class="cell" row="2" col="0"></div>
+            <div class="cell" row="2" col="1"></div>
+            <div class="cell" row="2" col="2"></div>
+        </div>
+
+        <div>
+            <h2>SCORE</h2>
+            <div class="display">
+                <div><span>PLAYER X : </span> <span id="scoreX">0</span></div>
+                <div><span>PLAYER O : </span> <span id="scoreO">0</span></div>
+            </div>
+
+            <div class="btn">
+                <button class="reset">RESET</button>
+            </div>
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
