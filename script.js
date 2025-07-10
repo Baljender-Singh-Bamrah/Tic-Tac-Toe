@@ -6,9 +6,9 @@ let WinX = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
 let WinY = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
 let turn = 0;
 let count = 0;
-let gamesPlayed = 0;
+let gamesPlayed = 0; // Track total games played
 
-// console.log('Game state:', { gamesPlayed, turn, xClass: x.classList.contains('x'), oClass: o.classList.contains('o') });
+console.log('Game state:', { gamesPlayed, turn, xClass: x.classList.contains('x'), oClass: o.classList.contains('o') });
 
 for (let grid of grids) {
     grid.addEventListener('click', () => {
@@ -32,7 +32,7 @@ for (let grid of grids) {
                     alert("X Wins !!!");
                     WinX = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
                     WinY = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
-                    gamesPlayed++; //
+                    gamesPlayed++; // Increment BEFORE clear_grid
                     clear_grid();
                     let ScoreX = document.querySelector("#scoreX");
                     let t = ScoreX.innerText;
@@ -63,7 +63,7 @@ for (let grid of grids) {
                     alert("O Wins !!!");
                     WinX = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
                     WinY = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
-                    gamesPlayed++;
+                    gamesPlayed++; // Increment BEFORE clear_grid
                     clear_grid();
                     let ScoreY = document.querySelector("#scoreO");
                     let t = ScoreY.innerText;
@@ -75,7 +75,7 @@ for (let grid of grids) {
         }
         if (count >= 9) {
             alert("Board Full !!");
-            gamesPlayed++;
+            gamesPlayed++; // Increment BEFORE clear_grid
             clear_grid();
             count = 0;
             WinX = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
@@ -102,15 +102,17 @@ const clear_grid = () => {
 
     // Set first player based on games played
     if (gamesPlayed % 2 === 0) {
+        // Even games (0, 2, 4, 6...): X starts
         x.classList.add('x');
         o.classList.remove('o');
         turn = 0; // X's turn
     } else {
+        // Odd games (1, 3, 5, 7...): O starts
         x.classList.remove('x');
         o.classList.add('o');
         turn = 1; // O's turn
     }
-    // console.log('Game state:', { gamesPlayed, turn, xClass: x.classList.contains('x'), oClass: o.classList.contains('o') });
+    console.log('Initial state:', { gamesPlayed, turn, xClass: x.classList.contains('x'), oClass: o.classList.contains('o') });
 
 }
 
