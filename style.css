@@ -274,7 +274,7 @@ h2 {
         align-items: flex-start;
     }
     *{
-        scale: 0.95;
+        scale: 1;
     }
 
     .game-board {
